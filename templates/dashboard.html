@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<div class="cards">
+    <div class="card">Total<br>{{data|length}}</div>
+    <div class="card">Pending<br>{{data|selectattr("status","equalto","Pending")|list|length}}</div>
+    <div class="card">Accepted<br>{{data|selectattr("status","equalto","Accepted")|list|length}}</div>
+    <div class="card">Completed<br>0</div>
+</div>
+
+<div class="table-box">
+<h3>Recent Requests</h3>
+<table>
+<tr><th>Food</th><th>Qty</th><th>Location</th><th>Status</th></tr>
+{% for r in data %}
+<tr>
+<td>{{r.food}}</td>
+<td>{{r.qty}}</td>
+<td>{{r.location}}</td>
+<td>{{r.status}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}

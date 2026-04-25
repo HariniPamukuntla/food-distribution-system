@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Food System</h2>
+    <a href="/">Dashboard</a>
+    <a href="/incoming">Incoming</a>
+    <a href="/accepted">Accepted</a>
+    <a href="/completed">Completed</a>
+    <a href="/ngos">NGOs</a>
+    <a href="/reports">Reports</a>
+</div>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Accepted Requests</h2>
+
+<div class="table-box">
+<table>
+<tr><th>Food</th><th>Qty</th><th>Location</th></tr>
+
+{% for r in data %}
+<tr>
+<td>{{r.food}}</td>
+<td>{{r.qty}}</td>
+<td>{{r.location}}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+{% endblock %}
